@@ -38,7 +38,7 @@ The transmitter output is connected to the receiver input to verify correct oper
 
 ## 🚀 UART Transmitter (TX)
 
-# TX Signals
+## TX Signals
 
 * `tx_data[7:0]` – 8-bit input data
 * `tx_start` – Starts transmission
@@ -58,7 +58,7 @@ The transmitter output is connected to the receiver input to verify correct oper
 
 ## UART Receiver (RX)
 
-# RX Signals
+## RX Signals
 
 * `rx` – Serial input line
 * `rx_data[7:0]` – Received data
