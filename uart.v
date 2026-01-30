@@ -29,9 +29,7 @@
     output reg        rx_done
 );
 
-    // Very fast baud for <500 ns simulation
     localparam BAUD_DIV = 4;
-
     // ----- TX -----
     reg [3:0] tx_cnt = 0;
     reg [3:0] tx_idx = 0;
@@ -61,7 +59,7 @@
         end else begin
             rx_done <= 0;
 
-            // ---------------- TX START ----------------
+            // TX START
             if (tx_start && !tx_busy) begin
                 tx_busy  <= 1;
                 tx_shift <= {1'b1, tx_data, 1'b0}; // stop + data + start
@@ -69,7 +67,7 @@
                 tx_cnt   <= 0;
             end
 
-            // ---------------- TX SHIFT ----------------
+            //  TX SHIFT
             if (tx_busy) begin
                 if (tx_cnt == BAUD_DIV-1) begin
                     tx_cnt <= 0;
@@ -83,14 +81,14 @@
                 end
             end
 
-            // ---------------- RX START DETECT ----------------
+            // RX START DETECT
             if (!rx_busy && tx == 0) begin
                 rx_busy <= 1;
                 rx_cnt  <= BAUD_DIV/2;  // mid-bit sampling
                 rx_idx  <= 0;
             end
 
-            // ---------------- RX SHIFT ----------------
+            // RX SHIFT
             else if (rx_busy) begin
                 if (rx_cnt == BAUD_DIV-1) begin
                     rx_cnt <= 0;
