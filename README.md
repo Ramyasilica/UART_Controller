@@ -109,9 +109,7 @@ This repository demonstrates a working UART protocol implementation using Verilo
 
 ## 🖼️ Output Waveform
 
-*Add your simulation waveform image here to show TX → RX operation.*
-
----
+![image alt](https://github.com/Ramyasilica/UART_Controller/blob/7482d420fbcab4492fea8bdd96264e5bce43c02d/uart_waveform.jpg)
 
 ## Thank you for visiting!
 
