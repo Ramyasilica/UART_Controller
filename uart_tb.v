@@ -48,14 +48,10 @@ module uart_tb;
         rst = 1;
         #20;
         rst = 0;
-
-        // transmit A5 at 40ns
         #20;
         tx_start = 1;
         #10;
         tx_start = 0;
-
-        // simulation ends before 500 ns
         #500;
         $finish;
     end
