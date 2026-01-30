@@ -41,7 +41,6 @@ module uart_tb;
         .rx_done(rx_done)
     );
 
-    // 10ns Clock
     always #5 clk = ~clk;
 
     initial begin
